@@ -87,9 +87,13 @@ class Main extends Component {
         this.clear();
     };
 
+    cloneArray = (array) => {
+        return JSON.parse(JSON.stringify(array));
+    }
+
     play = () => {
         const { gridFull } = this.state;
-        const gridFull2 = [ ... this.state.gridFull ];
+        const gridFull2 = this.cloneArray(gridFull);
 
         for (let i = this.rows - 1; i !== 0; i--) {
             for (let j = this.cols - 1; j !== 0; j--) {
